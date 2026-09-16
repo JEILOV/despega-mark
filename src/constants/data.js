@@ -37,10 +37,11 @@ export const PACKAGES = [
   {
     name: "Esencial",
     price: "150",
+    currency: "S/",
     tagline: "Para marcas que están definiendo su presencia.",
     featured: false,
     whatsappMessage:
-      "Hola, me interesa contratar el Paquete Esencial de $150.",
+      "Hola, me interesa contratar el Paquete Esencial de S/ 150.",
     features: [
       "1 reel",
       "Configuración de chatbot de WhatsApp",
@@ -51,10 +52,11 @@ export const PACKAGES = [
   {
     name: "Impulso",
     price: "250",
+    currency: "S/",
     tagline: "El más elegido por marcas en crecimiento activo.",
     featured: true,
     whatsappMessage:
-      "Hola, me interesa contratar el Paquete Impulso de $250.",
+      "Hola, me interesa contratar el Paquete Impulso de S/ 250.",
     features: [
       "3 reels / TikToks",
       "3 diseños de gráficas o carruseles",
@@ -66,9 +68,11 @@ export const PACKAGES = [
   {
     name: "Elite",
     price: "450",
+    currency: "S/",
     tagline: "Gestión integral para marcas que escalan en serio.",
     featured: false,
-    whatsappMessage: "Hola, me interesa contratar el Paquete Elite de $450.",
+    whatsappMessage:
+      "Hola, me interesa contratar el Paquete Elite de S/ 450.",
     features: [
       "5 reels / TikToks",
       "4 diseños para feed e historias",

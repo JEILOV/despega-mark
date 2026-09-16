@@ -25,7 +25,7 @@ function PackageCard({ pkg }) {
 
       <div className="mt-6 flex items-baseline gap-1">
         <span className="font-serif text-4xl text-brand-dark">
-          ${pkg.price}
+          {pkg.currency} {pkg.price}
         </span>
         <span className="text-[0.85rem] text-brand-dark/40">/ mes</span>
       </div>
@@ -34,27 +34,19 @@ function PackageCard({ pkg }) {
 
       <ul className="flex flex-1 flex-col gap-3.5">
         {pkg.features.map((feature) => (
-          <li
-            key={feature}
-            className="flex items-start gap-3 text-sm text-stone-700"
-          >
+          <li key={feature} className="flex items-start gap-3 text-sm text-stone-700">
             <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" />
             <span>{feature}</span>
           </li>
         ))}
       </ul>
 
-      
-       <a href={buildWhatsAppUrl(pkg.whatsappMessage)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={[
+      <a href={buildWhatsAppUrl(pkg.whatsappMessage)} target="_blank" rel="noopener noreferrer" className={[
           "mt-9 rounded-md px-6 py-3 text-center text-[0.9rem] transition-all",
           isFeatured
             ? "bg-brand-dark text-brand-cream shadow-soft hover:-translate-y-0.5 hover:shadow-soft-lg"
             : "border border-brand-dark/20 text-brand-dark hover:border-brand-dark/60",
-        ].join(" ")}
-      >
+        ].join(" ")}>
         Elegir {pkg.name}
       </a>
     </div>

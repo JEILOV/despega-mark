@@ -38,7 +38,9 @@ export default function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             
-             <a href="#casos-de-exito"
+             <a href="https://instagram.com/despega_mark"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[0.95rem] text-brand-dark underline decoration-brand-dark/40 decoration-1 underline-offset-4 transition-colors hover:decoration-brand-dark"
             >
               Conoce nuestro trabajo
