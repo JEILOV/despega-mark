@@ -8,23 +8,23 @@ function PackageCard({ pkg }) {
   return (
     <div
       className={[
-        "flex flex-col rounded-xl border px-8 py-10 transition-all duration-300",
+        "flex flex-col rounded-sm border p-8 transition-all duration-300 md:p-10",
         isFeatured
-          ? "border-brand-accent/40 bg-white shadow-soft-lg md:-translate-y-3"
-          : "border-brand-dark/10 bg-white/60 hover:-translate-y-1 hover:shadow-soft",
+          ? "border-brand-accent bg-white shadow-soft-lg md:-translate-y-3"
+          : "border-brand-dark/10 bg-white/80 hover:-translate-y-1 hover:shadow-soft",
       ].join(" ")}
     >
       {isFeatured && (
-        <span className="mb-5 w-fit rounded-full bg-brand-accent/10 px-3 py-1 text-[0.75rem] text-brand-accent">
+        <span className="mb-5 w-fit rounded-full bg-brand-accent/10 px-3 py-1 text-[0.7rem] uppercase tracking-widest text-brand-accent">
           El más elegido
         </span>
       )}
 
-      <h3 className="font-serif text-[1.4rem] text-brand-dark">{pkg.name}</h3>
-      <p className="mt-2 text-[0.9rem] text-brand-dark/50">{pkg.tagline}</p>
+      <h3 className="font-serif text-2xl text-brand-dark">{pkg.name}</h3>
+      <p className="mt-2 text-sm text-stone-500">{pkg.tagline}</p>
 
       <div className="mt-6 flex items-baseline gap-1">
-        <span className="font-serif text-[2.2rem] text-brand-dark">
+        <span className="font-serif text-4xl text-brand-dark">
           ${pkg.price}
         </span>
         <span className="text-[0.85rem] text-brand-dark/40">/ mes</span>
@@ -36,7 +36,7 @@ function PackageCard({ pkg }) {
         {pkg.features.map((feature) => (
           <li
             key={feature}
-            className="flex items-start gap-3 text-[0.92rem] text-brand-dark/80"
+            className="flex items-start gap-3 text-sm text-stone-700"
           >
             <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" />
             <span>{feature}</span>
@@ -44,8 +44,8 @@ function PackageCard({ pkg }) {
         ))}
       </ul>
 
-      <a
-        href={buildWhatsAppUrl(pkg.whatsappMessage)}
+      
+       <a href={buildWhatsAppUrl(pkg.whatsappMessage)}
         target="_blank"
         rel="noopener noreferrer"
         className={[
@@ -63,19 +63,26 @@ function PackageCard({ pkg }) {
 
 export default function Pricing() {
   return (
-    <section id="servicios" className="bg-brand-cream-contrast/60 px-6 py-24 md:py-28">
+    <section id="servicios" className="bg-brand-cream px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="font-serif text-[2rem] text-brand-dark md:text-[2.4rem]">
+          <div className="flex items-center justify-center gap-3">
+            <span className="text-[0.75rem] uppercase tracking-[0.18em] text-brand-accent">
+              Servicios y planes
+            </span>
+            <span className="h-px w-10 bg-brand-accent/60" />
+          </div>
+
+          <h2 className="mt-6 font-serif text-[2rem] text-brand-dark md:text-[2.4rem]">
             Paquetes pensados para cada etapa de tu marca
           </h2>
-          <p className="mt-4 text-[0.95rem] leading-relaxed text-brand-dark/70">
+          <p className="mt-4 text-[0.95rem] leading-relaxed text-stone-600">
             Contenido, automatización y publicidad, con el nivel de
             acompañamiento que tu negocio necesita hoy.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3 md:items-center md:gap-6">
+        <div className="mt-16 grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 md:gap-6">
           {PACKAGES.map((pkg) => (
             <PackageCard key={pkg.name} pkg={pkg} />
           ))}
